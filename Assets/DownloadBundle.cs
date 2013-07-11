@@ -34,7 +34,7 @@ public class DownloadBundle : MonoBehaviour
 		state = "download " + url;
 		string path = Application.temporaryCachePath + "/img.unity3d";
 		
-		using (WWW www = new WWW (url)) {
+		using (WWW www = new WWW (url + "?time=" + System.DateTime.Now.GetHashCode())) {
 
 			yield return www;
 
